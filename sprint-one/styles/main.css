@@ -68,6 +68,13 @@ body {
 
 .navbar__logo {
   margin-bottom: 0.5rem;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.navbar__logo:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .navbar__list {
@@ -86,7 +93,7 @@ body {
 }
 
 .navbar__list--item {
-  font-family: 'AvenirDemi';
+  font-family: "AvenirDemi";
   font-size: 1rem;
   line-height: 1.5rem;
 }
@@ -95,6 +102,8 @@ body {
   text-decoration: none;
   color: #FFFFFF;
   position: relative;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
 .navbar__link--active::after {
@@ -105,6 +114,10 @@ body {
   height: 0.25rem;
   width: 10rem;
   background: #FFFFFF;
+}
+
+.navbar__link:hover {
+  color: #0095FF;
 }
 
 @media screen and (min-width: 768px) {
@@ -149,6 +162,7 @@ body {
             justify-content: flex-start;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    width: 100%;
   }
   .navbar__logo {
     margin-left: 11.25rem;
@@ -170,7 +184,7 @@ body {
   background-size: cover;
   background-position: center;
   height: 11.438rem;
-  width: 20rem;
+  width: 100%;
   margin: 0;
 }
 
@@ -180,6 +194,13 @@ body {
   width: 60%;
   color: #FFFFFF;
   margin: 3.125rem 0 0 1rem;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.header__title:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 @media screen and (min-width: 768px) {
@@ -200,7 +221,7 @@ body {
     height: 41.875rem;
   }
   .header__title {
-    font-family: 'AvenirBold';
+    font-family: "AvenirBold";
     font-size: 3.75rem;
     line-height: 4.25rem;
     width: 47%;
@@ -210,7 +231,7 @@ body {
 
 .about {
   margin: 0;
-  width: 20rem;
+  width: 100%;
 }
 
 .about__title {
@@ -218,6 +239,13 @@ body {
   font-size: 1.375rem;
   width: 18.75rem;
   margin: 2rem 0 0 1rem;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.about__title:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .about__container {
@@ -239,6 +267,16 @@ body {
 .about__container--image {
   width: 18rem;
   margin: 1.5rem 0;
+  -webkit-transition: all 900ms ease;
+  transition: all 900ms ease;
+}
+
+.about__container--image:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+  -webkit-box-shadow: 7px 7px 15px #E1E1E1;
+          box-shadow: 7px 7px 15px #E1E1E1;
+  border-radius: 5px;
 }
 
 .about__container--block {
@@ -256,14 +294,14 @@ body {
 }
 
 .about__container--header {
-  font-family: 'AvenirDemi';
+  font-family: "AvenirDemi";
   font-size: 1rem;
   line-height: 1.75rem;
   padding: 0;
 }
 
 .about__container--subheader {
-  font-family: 'AvenirDemi';
+  font-family: "AvenirDemi";
   font-size: 0.875rem;
   line-height: 1.375rem;
   margin: 2rem 0 2.5rem 0;
@@ -295,10 +333,10 @@ body {
     width: 100%;
   }
   .about__title {
-    font-family: 'AvenirBold';
+    font-family: "AvenirBold";
     font-size: 2.25rem;
     line-height: 2.75rem;
-    width: 90%;
+    width: 80%;
     margin-left: 1.5rem;
   }
   .about__container--image {
@@ -311,11 +349,10 @@ body {
     font-family: "AvenirBold";
     font-size: 1.438rem;
     line-height: 2rem;
-    width: 90%;
     margin-left: 1.5rem;
   }
   .about__container--subheader {
-    font-family: 'AvenirDemi';
+    font-family: "AvenirDemi";
     font-size: 1rem;
     line-height: 1.5rem;
     margin-left: 1.5rem;
@@ -369,7 +406,7 @@ body {
           align-items: center;
   background-color: #FAFAFA;
   margin: 0;
-  width: 20rem;
+  width: 100%;
 }
 
 .photos__header {
@@ -379,6 +416,13 @@ body {
   margin: 2rem 0 0.5rem 1rem;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.photos__header:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .photos__gallery {
@@ -396,6 +440,17 @@ body {
 .photos__gallery--images {
   width: 18rem;
   padding: 1rem;
+  -webkit-filter: grayscale(90%);
+          filter: grayscale(90%);
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.photos__gallery--images:hover {
+  -webkit-filter: none;
+          filter: none;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 @media screen and (min-width: 768px) {
@@ -406,7 +461,7 @@ body {
             align-items: flex-start;
   }
   .photos__header {
-    font-family: 'AvenirBold';
+    font-family: "AvenirBold";
     font-size: 2.25rem;
     line-height: 2.75rem;
     -ms-flex-item-align: start;
@@ -437,7 +492,7 @@ body {
 
 @media screen and (min-width: 1024px) {
   .photos__header {
-    font-family: 'AvenirBold';
+    font-family: "AvenirBold";
     font-size: 2.25rem;
     line-height: 2.75rem;
     -ms-flex-item-align: start;
@@ -473,17 +528,29 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 20rem;
+  width: 100%;
   margin: 0;
+}
+
+.footer__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .footer__container {
@@ -498,13 +565,19 @@ body {
 }
 
 .footer__container--heading {
-  font-family: 'AvenirBold';
+  font-family: "AvenirBold";
   font-size: 2.25rem;
   line-height: 2.75rem;
-  width: 18.75rem;
   margin: 2rem 0 0 1rem;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.footer__container--heading:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .footer__container--social {
@@ -519,21 +592,35 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin: 1rem 0 0.5rem 1rem;
-  width: 18.75rem;
 }
 
 .footer__container--social--image {
   margin: 0 2rem 1.25rem 0;
+  -webkit-transition: all 650ms ease;
+  transition: all 650ms ease;
+}
+
+.footer__container--social--image:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .footer__container--logo {
   display: none;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.footer__container--logo:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .footer__copyright {
   font-size: 0.75rem;
   width: 12.5rem;
   margin-left: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer .info__container {
@@ -558,7 +645,7 @@ body {
 }
 
 .footer .info__container--block--text {
-  font-family: 'AvenirDemi';
+  font-family: "AvenirDemi";
   font-size: 0.8rem;
   line-height: 1.375rem;
 }
@@ -573,10 +660,15 @@ body {
 }
 
 .footer .info__container--label {
-  font-family: 'AvenirRegular';
+  font-family: "AvenirRegular";
   font-size: 0.775rem;
   line-height: 1.25rem;
   margin-bottom: 1.5rem;
+}
+
+.footer .info__container--mail {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 @media screen and (min-width: 768px) {
@@ -585,29 +677,45 @@ body {
     margin: 0;
     padding: 0;
   }
+  .footer__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
   .footer__container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
-    width: 100%;
     margin-bottom: 1rem;
+    width: 100%;
   }
   .footer__container--heading {
-    width: 35%;
     margin: 2.5rem 0 0 1.5rem;
     line-height: 1.75rem;
   }
   .footer__container--social {
     -ms-flex-line-pack: end;
         align-content: flex-end;
-    margin: 0;
+    margin: 0 0 0 2.5rem;
   }
   .footer__container--social--image {
     margin: 0 2rem 0 0;
@@ -619,11 +727,12 @@ body {
     margin: 0 1.5rem 0 2.5rem;
   }
   .footer__copyright {
-    width: 90%;
+    width: 70%;
     margin: 0 0 3rem 1.5rem;
   }
   .footer .info__container {
     margin: 1.5rem 0 0 1.5rem;
+    width: 100%;
   }
 }
 
@@ -633,27 +742,27 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    width: 75%;
     margin: 0 0 0 11.25rem;
   }
   .footer__container--heading {
-    width: 20%;
     margin: 3rem 0 0 0;
   }
   .footer__container--social {
-    margin: 3.5rem 0 0 0;
+    margin-left: 9rem;
   }
   .footer__container--logo {
-    margin: 3.5rem 11.25rem 0 22rem;
+    margin: 3.5rem 1.5rem 0 0;
   }
   .footer__copyright {
     font-size: 0.875rem;
-    width: 90%;
+    width: 70%;
     margin: 1rem 0 3rem 11.25rem;
   }
   .footer .info__container {
@@ -665,7 +774,7 @@ body {
     margin: 3.5rem 4rem 0 0;
   }
   .footer .info__container--block--text {
-    font-family: 'AvenirDemi';
+    font-family: "AvenirDemi";
     font-size: 1rem;
     line-height: 1.5rem;
   }
