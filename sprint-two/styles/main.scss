@@ -1,0 +1,577 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirRegular";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// Navigation Bar
+
+.navbar {
+  background-color: $black;
+  @include flex-column;
+  @include justify-align-center;
+  width: 100%;
+  height: 5rem;
+  padding: 0;
+  margin: 0;
+
+  &__logo {
+    margin-bottom: 0.5rem;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__list {
+    @include flex-row;
+    list-style: none;
+    justify-content: space-around;
+    width: 20rem;
+    margin: 0;
+
+    &--item {
+      @include h3-subheader;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    position: relative;
+    transition: $transition-500;
+    &--active {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1.875rem;
+        left: -3.125rem;
+        height: 0.25rem;
+        width: 10rem;
+        background: $white;
+      }
+    }
+    &:hover {
+      color: $brainflix-blue-light;
+    }
+  }
+}
+
+@include tablet {
+  .navbar {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    &__logo {
+      margin-left: 1.5rem;
+      padding-top: 0.938rem;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $white;
+
+      &--active {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2.876rem;
+          bottom: 0;
+          left: -0.75rem;
+          height: 0.25rem;
+          width: 6.25rem;
+          background: $white;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .navbar {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    &__logo {
+      margin-left: 11.25rem;
+      padding: 0;
+    }
+    &__link {
+      &--active {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2.875rem;
+          left: 0;
+          height: 0.25rem;
+          width: 5rem;
+          background: $white;
+        }
+      }
+    }
+  }
+}
+
+// Header Section
+
+.header {
+  background-image: url("/assets/images/hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 11.438rem;
+  width: 100%;
+  margin: 0;
+
+  &__title {
+    font-family: "AvenirBold";
+    font-size: 1.375rem;
+    width: 60%;
+    color: $white;
+    margin: 3.125rem 0 0 1rem;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@include tablet {
+  .header {
+    width: 100%;
+    height: 25rem;
+
+    &__title {
+      width: 80%;
+      font-size: 3.75rem;
+      margin: 7.5rem 1.5rem;
+    }
+  }
+}
+
+@include desktop {
+  .header {
+    width: 100%;
+    height: 41.875rem;
+    &__title {
+      @include hero-header;
+      width: 47%;
+      margin: 11.25rem;
+    }
+  }
+}
+
+// About Section
+
+.about {
+  margin: 0;
+  width: 100%;
+  &__title {
+    font-family: "AvenirBold";
+    font-size: 1.375rem;
+    width: 18.75rem;
+    margin: 2rem 0 0 1rem;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__container {
+    @include flex-column;
+    @include justify-align-center;
+
+    &--image {
+      width: 18rem;
+      margin: 1.5rem 0;
+      transition: $transition-900;
+      &:hover {
+        transform: scale(1.025);
+        box-shadow: 7px 7px 15px $mercury;
+        border-radius: 5px;
+      }
+    }
+
+    &--block {
+      @include flex-column;
+      justify-content: flex-start;
+      margin: 0 1rem;
+    }
+
+    &--header {
+      @include h1-header-mob;
+      padding: 0;
+    }
+
+    &--subheader {
+      @include h2-subheader-mob;
+      margin: 2rem 0 2.5rem 0;
+    }
+
+    &--subdivision {
+      @include flex-column;
+      justify-content: space-evenly;
+      margin-bottom: 2.5rem;
+      &--paragraph {
+        @include h4-paragraph-mob;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .about {
+    width: 100%;
+    &__title {
+      @include h1-header-desktop;
+      width: 80%;
+      margin-left: 1.5rem;
+    }
+
+    &__container {
+      &--image {
+        width: 45rem;
+      }
+      &--block {
+        margin: 0 1.5rem 0 0;
+      }
+      &--header {
+        font-family: "AvenirBold";
+        font-size: 1.438rem;
+        line-height: 2rem;
+        margin-left: 1.5rem;
+      }
+      &--subheader {
+        @include h3-subheader;
+        margin-left: 1.5rem;
+      }
+      &--subdivision {
+        flex-direction: row;
+        &--paragraph {
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .about {
+    &__title {
+      margin-left: 11.25rem;
+    }
+    &__container {
+      &--image {
+        margin: 3rem 11.25rem;
+        width: 56rem;
+      }
+      &--block {
+        width: 56rem;
+        margin: 0 16.25rem 0 11.25rem;
+      }
+      &--header {
+        margin: 0 0 0 2.5rem;
+      }
+      &--subheader {
+        margin: 2.5rem 0 3.5rem 2.5rem;
+      }
+      &--subdivision {
+        &--paragraph {
+          width: 26.25rem;
+          font-size: 0.875rem;
+          margin-left: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+// Photo Gallery Section
+
+.photos {
+  @include flex-column;
+  align-items: center;
+  background-color: $alabaster;
+  margin: 0;
+  width: 100%;
+
+  &__header {
+    font-family: "AvenirBold";
+    font-size: 1.375rem;
+    width: 18.75rem;
+    margin: 2rem 0 0.5rem 1rem;
+    align-self: flex-start;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__gallery {
+    @include flex-column;
+    margin: 0;
+    padding: 0;
+
+    &--images {
+      width: 18rem;
+      padding: 1rem;
+      filter: grayscale(90%);
+      transition: $transition-700;
+      &:hover {
+        filter: none;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@include tablet {
+  .photos {
+    width: 100%;
+    align-items: flex-start;
+    &__header {
+      @include h1-header-desktop;
+      align-self: flex-start;
+      margin: 2.5rem 0 3.5rem 1.5rem;
+    }
+    &__gallery {
+      flex-direction: row;
+      flex-wrap: wrap;
+      @include justify-align-center;
+      margin-bottom: 2rem;
+      &--images {
+        width: 30%;
+        margin: 0;
+        padding: 0.75rem;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .photos {
+    &__header {
+      @include h1-header-desktop;
+      align-self: flex-start;
+      margin: 2.5rem 0 3.5rem 11.25rem;
+    }
+    &__gallery {
+      margin: 0 9.75rem 2.5rem 9.75rem;
+      &--images {
+        @include flex-row;
+        @include justify-align-center;
+        width: 30%;
+        margin: 0;
+        padding: 0.75rem;
+      }
+    }
+  }
+}
+
+// Footer Section
+
+.footer {
+  background-color: $black;
+  color: $white;
+  @include flex-column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+
+  &__header {
+    @include flex-column;
+    flex-wrap: wrap;
+  }
+
+  &__container {
+    @include flex-column;
+    width: 18.75rem;
+
+    &--heading {
+      @include h1-header-desktop;
+      margin: 2rem 0 0 1rem;
+      align-self: flex-start;
+      transition: $transition-700;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &--social {
+      @include flex-row;
+      justify-content: flex-start;
+      margin: 1rem 0 0.5rem 1rem;
+
+      &--image {
+        margin: 0 2rem 1.25rem 0;
+        transition: $transition-650;
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+
+    &--logo {
+      display: none;
+      transition: $transition-700;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 0.75rem;
+    width: 12.5rem;
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info__container {
+    @include flex-column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 1rem;
+
+    &--upper-block {
+      margin-bottom: 1.25rem;
+    }
+
+    &--block--text {
+      @include h4-paragraph;
+    }
+
+    &--bottom-block {
+      margin-bottom: 1.5rem;
+    }
+
+    &--block--subtext {
+      @include h5-labels;
+    }
+
+    &--label {
+      @include h4-lists;
+      margin-bottom: 1.5rem;
+    }
+
+    &--mail {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    &__header {
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    &__container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1rem;
+      width: 100%;
+
+      &--heading {
+        margin: 2.5rem 0 0 1.5rem;
+        line-height: 1.75rem;
+      }
+
+      &--social {
+        align-content: flex-end;
+        margin: 0 0 0 2.5rem;
+        &--image {
+          margin: 0 2rem 0 0;
+        }
+      }
+
+      &--logo {
+        display: inline-flex;
+        margin: 0 1.5rem 0 2.5rem;
+      }
+    }
+
+    &__copyright {
+      width: 70%;
+      margin: 0 0 3rem 1.5rem;
+    }
+
+    .info__container {
+      margin: 1.5rem 0 0 1.5rem;
+      width: 100%;
+    }
+  }
+}
+
+@include desktop {
+  .footer {
+    &__container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 75%;
+      margin: 0 0 0 11.25rem;
+
+      &--heading {
+        margin: 3rem 0 0 0;
+      }
+
+      &--social {
+        margin-left: 9rem;
+      }
+
+      &--logo {
+        margin: 3.5rem 1.5rem 0 0;
+      }
+    }
+
+    &__copyright {
+      font-size: 0.875rem;
+      width: 70%;
+      margin: 1rem 0 3rem 11.25rem;
+    }
+
+    .info__container {
+      align-content: flex-start;
+      justify-content: flex-start;
+      margin: 3.5rem 4rem 0 0;
+      &--block--text {
+        @include h3-subheader;
+      }
+
+      &--bottom-block {
+        margin-bottom: 1.5rem;
+      }
+
+      &--block--subtext {
+        font-size: 0.875rem;
+      }
+
+      &--label {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
