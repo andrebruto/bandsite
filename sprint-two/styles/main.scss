@@ -144,6 +144,9 @@ body {
       transform: scale(1.05);
     }
   }
+  &__music {
+    background-color: red; // restart point
+  }
 }
 
 @include tablet {
