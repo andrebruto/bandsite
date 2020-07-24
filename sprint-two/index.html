@@ -140,15 +140,34 @@
       <h1 class="comments__header">Join the Conversation</h1>
       <div class="comments__block" id="comments__container">
         <div class="comments__comment">
-          <img class="comments_comment-image" src="" alt="" />
+          <img
+            class="comments__comment-image"
+            src="/assets/images/Mohan-muruge.jpg"
+            alt=""
+          />
           <form class="comments__form" action="post_comment" method="post">
-            <label for="comments__author">Name</label>
-            <input type="text" name="comment__author" required="required" />
-            <label for="comment__author">Comment</label>
-            <input type="text" name="comment__text" required="required" />
-            <button>COMMENT</button>
+            <label class="comments__form-authorLabel" for="comments__author"
+              >NAME</label
+            >
+            <input
+              class="comments__form-authorInput"
+              type="text"
+              name="comment__author"
+              required="required"
+            />
+            <label class="comments__form-textLabel" for="comment__author"
+              >COMMENT</label
+            >
+            <input
+              class="comments__form-textInput"
+              type="text"
+              name="comment__text"
+              required="required"
+            />
+            <button class="comments__form-button">COMMENT</button>
           </form>
         </div>
+
         <!-- additional data being addded is comming from: /scripts/build-bio-page.js -->
       </div>
     </section>

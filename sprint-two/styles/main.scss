@@ -382,6 +382,78 @@ body {
   }
 }
 
+// Comments Section
+.comments {
+  @include flex-column;
+
+  &__header {
+    font-family: "AvenirBold";
+    font-size: 1.375rem;
+    width: 18.75rem;
+    margin: 2rem 0 0.5rem 1rem;
+    align-self: flex-start;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__block {
+    @include flex-column;
+  }
+
+  &__comment {
+    @include flex-row;
+    justify-content: space-evenly;
+    border-bottom: 2px $silver solid;
+
+    &-image {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
+
+  &__form {
+    @include flex-column;
+    width: 224px;
+
+    &-authorLabel {
+      @include h5-labels-mob;
+      color: $silver;
+    }
+
+    &-authorInput {
+      border-radius: 5px;
+      background-color: $alabaster;
+      border: 2px $black solid;
+      height: 40px;
+    }
+
+    &-textLabel {
+      @include h5-labels-mob;
+      color: $silver;
+    }
+
+    &-textInput {
+      background-color: $alabaster;
+      border-radius: 5px;
+      height: 80px;
+      border: 1px $mercury solid;
+    }
+
+    &-button {
+      background-color: $black;
+      @include h4-lists-mob;
+      font-family: "AvenirDemi";
+      color: $white;
+      height: 40px;
+      border-radius: 5px;
+      border: 2px $black solid;
+    }
+  }
+}
+
 // Footer Section
 
 .footer {

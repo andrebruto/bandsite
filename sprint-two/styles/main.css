@@ -526,6 +526,112 @@ body {
   }
 }
 
+.comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comments__header {
+  font-family: "AvenirBold";
+  font-size: 1.375rem;
+  width: 18.75rem;
+  margin: 2rem 0 0.5rem 1rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.comments__header:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.comments__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comments__comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-bottom: 2px #AFAFAF solid;
+}
+
+.comments__comment-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.comments__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 224px;
+}
+
+.comments__form-authorLabel {
+  font-family: "AvenirDemi";
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+}
+
+.comments__form-authorInput {
+  border-radius: 5px;
+  background-color: #FAFAFA;
+  border: 2px #323232 solid;
+  height: 40px;
+}
+
+.comments__form-textLabel {
+  font-family: "AvenirDemi";
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+}
+
+.comments__form-textInput {
+  background-color: #FAFAFA;
+  border-radius: 5px;
+  height: 80px;
+  border: 1px #E1E1E1 solid;
+}
+
+.comments__form-button {
+  background-color: #323232;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-family: "AvenirDemi";
+  color: #FFFFFF;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px #323232 solid;
+}
+
 .footer {
   background-color: #323232;
   color: #FFFFFF;
