@@ -22,7 +22,6 @@ const comments = [
 ];
 
 function loopThroughComments(commentsArr) {
-  commentsSection.innerHTML = "";
   for (let i = 0; i < commentsArr.length; i++) {
     // loops into the comments array
     createCommentElement(commentsArr[i]); // calls the function with the loops to pass each object of the array
@@ -33,7 +32,7 @@ function createCommentElement(comment) {
   // creates the div that will store each full comment structure
   const commentsComment = document.createElement("div");
   commentsComment.classList.add("comments__comment");
-  const commentsBlock = document.getElementById("comments__container");
+  const commentsBlock = document.getElementById("comments-output");
   commentsBlock.appendChild(commentsComment);
 
   // creates the image of the author of the comment
@@ -90,6 +89,10 @@ function submitForm(event) {
       date: commentDate,
     });
     // console.log(comments);
+    // commentsSection.innerHTML = "";
+    const commentsBlock = document.getElementById("comments-output");
+    commentsBlock.innerHTML = "";
+    loopThroughComments(comments);
+    event.target.reset();
   }
-  loopThroughComments(comments);
 }
