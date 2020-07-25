@@ -411,6 +411,8 @@ body {
       height: 50px;
       width: 50px;
       border-radius: 50%;
+      object-fit: cover;
+      object-position: left center;
     }
   }
 
@@ -450,6 +452,10 @@ body {
       height: 40px;
       border-radius: 5px;
       border: 2px $black solid;
+    }
+
+    &-author {
+      @include h4-paragraph;
     }
   }
 }

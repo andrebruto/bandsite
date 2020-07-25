@@ -143,27 +143,33 @@
           <img
             class="comments__comment-image"
             src="/assets/images/Mohan-muruge.jpg"
-            alt=""
+            alt="Avatar of Mohan Muruge"
           />
-          <form class="comments__form" action="post_comment" method="post">
+          <form
+            id="commentForm"
+            class="comments__form"
+            action="post_comment"
+            method="post"
+          >
             <label class="comments__form-authorLabel" for="comments__author"
               >NAME</label
             >
             <input
               class="comments__form-authorInput"
               type="text"
-              name="comment__author"
+              name="commentAuthor"
               required="required"
+              placeholder="  Name"
             />
             <label class="comments__form-textLabel" for="comment__author"
               >COMMENT</label
             >
-            <input
+            <textarea
               class="comments__form-textInput"
-              type="text"
-              name="comment__text"
-              required="required"
-            />
+              name="commentText"
+              placeholder="  Add a new comment"
+            ></textarea>
+
             <button class="comments__form-button">COMMENT</button>
           </form>
         </div>
@@ -270,5 +276,6 @@
     </footer>
 
     <script src="/scripts/build-bio-page.js"></script>
+    <script src="/scripts/form-submission.js"></script>
   </body>
 </html>

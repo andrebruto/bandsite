@@ -580,6 +580,10 @@ body {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left center;
+     object-position: left center;
 }
 
 .comments__form {
@@ -630,6 +634,12 @@ body {
   height: 40px;
   border-radius: 5px;
   border: 2px #323232 solid;
+}
+
+.comments__form-author {
+  font-family: "AvenirDemi";
+  font-size: 0.8rem;
+  line-height: 1.375rem;
 }
 
 .footer {
