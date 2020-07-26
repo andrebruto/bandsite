@@ -45,36 +45,36 @@ function createShowElement(show) {
   containerBlock.className = "container__block";
 
   const containerBlockDate = document.createElement("div"); // container to store dates
-  containerBlockDate.className = "container__block--card";
+  containerBlockDate.className = "container__block-card";
   const containerBlockVenue = document.createElement("div"); // container to store venues
-  containerBlockVenue.className = "container__block--card";
+  containerBlockVenue.className = "container__block-card";
   const containerBlockLocation = document.createElement("div"); // container to store locations
-  containerBlockLocation.className = "container__block--card";
+  containerBlockLocation.className = "container__block-card";
 
   const containerBlockButton = document.createElement("button"); // button
-  containerBlockButton.className = "container__block--button";
+  containerBlockButton.className = "container__block-button";
   containerBlockButton.innerText = "BUY TICKETS";
 
   const containerBlockDateTitle = document.createElement("h4"); // date title for each show
-  containerBlockDateTitle.className = "container__block--card-title";
+  containerBlockDateTitle.className = "container__block-cardTitle";
   containerBlockDateTitle.innerText = "DATE";
   const containerBlockDateInput = document.createElement("p"); // stores dates for each show
-  containerBlockDateInput.className = "container__block--card-input";
-  containerBlockDateInput.classList.add("container__block--card-date");
+  containerBlockDateInput.className = "container__block-cardInput";
+  containerBlockDateInput.classList.add("container__block-cardDate");
   containerBlockDateInput.innerText = show.date;
 
   const containerBlockVenueTitle = document.createElement("h4"); // venue title for each show
-  containerBlockVenueTitle.className = "container__block--card-title";
+  containerBlockVenueTitle.className = "container__block-cardTitle";
   containerBlockVenueTitle.innerText = "VENUE";
   const containerBlockVenueInput = document.createElement("p"); // stores venues for each show
-  containerBlockVenueInput.className = "container__block--card-input";
+  containerBlockVenueInput.className = "container__block-cardInput";
   containerBlockVenueInput.innerText = show.venue;
 
   const containerBlockLocationTitle = document.createElement("h4"); // location title for each show
-  containerBlockLocationTitle.className = "container__block--card-title";
+  containerBlockLocationTitle.className = "container__block-cardTitle";
   containerBlockLocationTitle.innerText = "LOCATION";
   const containerBlockLocationInput = document.createElement("p"); // stores locations for each show
-  containerBlockLocationInput.className = "container__block--card-input";
+  containerBlockLocationInput.className = "container__block-cardInput";
   containerBlockLocationInput.innerText = show.location;
 
   showsContainer.appendChild(containerBlock); //appends container with dates, venues and locations subcontainer into a div
@@ -105,16 +105,16 @@ const showsTitleBlock = document.createElement("div"); // container to keep h3's
 showsTitleBlock.className = "shows__titleBlock";
 
 const showsTitleBlockDate = document.createElement("h3"); // table header - dates
-showsTitleBlockDate.className = "shows__titleBlock--heading";
-showsTitleBlockDate.classList.add("shows__titleBlock--date");
+showsTitleBlockDate.className = "shows__titleBlock-heading";
+showsTitleBlockDate.classList.add("shows__titleBlockDate");
 showsTitleBlockDate.innerText = "DATES";
 showsTitleBlock.appendChild(showsTitleBlockDate);
 const showsTitleBlockVenue = document.createElement("h3"); // table header- venues
-showsTitleBlockVenue.className = "shows__titleBlock--heading";
+showsTitleBlockVenue.className = "shows__titleBlock-heading";
 showsTitleBlockVenue.innerText = "VENUE";
 showsTitleBlock.appendChild(showsTitleBlockVenue);
 const showsTitleBlockLocation = document.createElement("h3"); // table header - locations
-showsTitleBlockLocation.className = "shows__titleBlock--heading";
+showsTitleBlockLocation.className = "shows__titleBlock-heading";
 showsTitleBlockLocation.innerText = "LOCATION";
 showsTitleBlock.appendChild(showsTitleBlockLocation);
 

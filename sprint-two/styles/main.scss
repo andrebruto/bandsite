@@ -15,6 +15,9 @@ body {
 }
 
 // Navigation Bar
+// *
+// *
+// *
 
 .navbar {
   background-color: $black;
@@ -39,10 +42,10 @@ body {
     justify-content: space-around;
     width: 20rem;
     margin: 0;
+  }
 
-    &--item {
-      @include h3-subheader;
-    }
+  &__item {
+    @include h3-subheader;
   }
 
   &__link {
@@ -147,6 +150,9 @@ body {
 }
 
 // Header Section
+// *
+// *
+// *
 
 .header {
   background-image: url("/assets/images/hero-image.jpg");
@@ -198,6 +204,9 @@ body {
 }
 
 // Shows Header Section
+// *
+// *
+// *
 
 .showsPageHeader {
   background-image: url("/assets/images/alexander-popov-3InMDrsuYrk-unsplash.jpg");
@@ -306,6 +315,9 @@ body {
 }
 
 // Shows Dates Section
+// *
+// *
+// *
 
 .shows {
   @include flex-column;
@@ -326,32 +338,32 @@ body {
     @include flex-column;
   }
 
-  &__titleBlock {
-    &--heading {
-      display: none;
-    }
+  &__titleBlock-heading {
+    display: none;
   }
 }
 
-.container__block {
-  margin: 0 16px 16px 16px;
-  border-bottom: 2px $mercury solid;
+.container {
+  &__block {
+    margin: 0 16px 16px 16px;
+    border-bottom: 2px $mercury solid;
+  }
 
-  &--card-title {
+  &__block-cardTitle {
     color: $silver;
     margin-bottom: 16px;
   }
 
-  &--card-input {
+  &__block-cardInput {
     margin-bottom: 24px;
   }
 
-  &--card-date {
+  &__block-cardDate {
     @include h3-subheader;
     color: $black;
   }
 
-  &--button {
+  &__block-button {
     background-color: $black;
     @include h4-lists-mob;
     font-family: "AvenirDemi";
@@ -378,45 +390,47 @@ body {
       @include flex-row;
       justify-content: flex-start;
       align-items: flex-start;
-      &--heading {
-        display: inline-flex;
-        @include h5-labels;
-        color: $silver;
-        margin-left: 1.5rem;
-        margin-right: 7.2rem;
-      }
+    }
+    &__titleBlockDate {
+      margin-right: 7.6rem;
+    }
 
-      &--date {
-        margin-right: 7.6rem;
-      }
+    &__titleBlock-heading {
+      display: inline-flex;
+      @include h5-labels;
+      color: $silver;
+      margin-left: 1.5rem;
+      margin-right: 7.2rem;
     }
   }
 
-  .container__block {
-    @include flex-row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 90%;
-    margin: 1rem 1.5rem 0 1.5rem;
+  .container {
+    &__block {
+      @include flex-row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 90%;
+      margin: 1rem 1.5rem 0 1.5rem;
+    }
 
-    &--card {
+    &__block-card {
       justify-content: flex-start;
       width: 28%;
     }
 
-    &--card-title {
+    &__block-cardTitle {
       display: none;
     }
 
-    &--card-input {
+    &__block-cardInput {
       @include h4-paragraph-mob;
     }
 
-    &--card-date {
+    &__block-cardDate {
       font-size: 0.8rem;
     }
 
-    &--button {
+    &__block-button {
       width: 25%;
     }
   }
@@ -442,23 +456,26 @@ body {
       margin-right: 8rem;
     }
 
-    &__titleBlock--heading {
+    &__titleBlock-heading {
       margin-right: 8rem;
     }
   }
 
-  .container__block {
-    &--button {
+  .container {
+    &__block-button {
       width: 10rem;
     }
 
-    &--card-input {
+    &__block-cardInput {
       font-size: 1rem;
     }
   }
 }
 
 // About Section
+// *
+// *
+// *
 
 .about {
   margin: 0;
@@ -477,43 +494,44 @@ body {
   &__container {
     @include flex-column;
     @include justify-align-center;
+  }
 
-    &--image {
-      width: 18rem;
-      margin: 1.5rem 0;
-      transition: $transition-900;
-      &:hover {
-        transform: scale(1.025);
-        box-shadow: 7px 7px 15px $mercury;
-        border-radius: 5px;
-      }
-    }
+  &__block {
+    @include flex-column;
+    justify-content: flex-start;
+    margin: 0 1rem;
+  }
 
-    &--block {
-      @include flex-column;
-      justify-content: flex-start;
-      margin: 0 1rem;
-    }
+  &__header {
+    @include h1-header-mob;
+    padding: 0;
+  }
 
-    &--header {
-      @include h1-header-mob;
-      padding: 0;
-    }
+  &__subheader {
+    @include h2-subheader-mob;
+    margin: 2rem 0 2.5rem 0;
+  }
 
-    &--subheader {
-      @include h2-subheader-mob;
-      margin: 2rem 0 2.5rem 0;
+  &__image {
+    width: 90vw;
+    margin: 1.5rem 0;
+    transition: $transition-900;
+    &:hover {
+      transform: scale(1.025);
+      box-shadow: 7px 7px 15px $mercury;
+      border-radius: 5px;
     }
+  }
 
-    &--subdivision {
-      @include flex-column;
-      justify-content: space-evenly;
-      margin-bottom: 2.5rem;
-      &--paragraph {
-        @include h4-paragraph-mob;
-        margin-top: 1.5rem;
-      }
-    }
+  &__subdivision {
+    @include flex-column;
+    justify-content: space-evenly;
+    margin-bottom: 2.5rem;
+  }
+
+  &__paragraph {
+    @include h4-paragraph-mob;
+    margin-top: 1.5rem;
   }
 }
 
@@ -526,29 +544,32 @@ body {
       margin-left: 1.5rem;
     }
 
-    &__container {
-      &--image {
-        width: 45rem;
-      }
-      &--block {
-        margin: 0 1.5rem 0 0;
-      }
-      &--header {
-        font-family: "AvenirBold";
-        font-size: 1.438rem;
-        line-height: 2rem;
-        margin-left: 1.5rem;
-      }
-      &--subheader {
-        @include h3-subheader;
-        margin-left: 1.5rem;
-      }
-      &--subdivision {
-        flex-direction: row;
-        &--paragraph {
-          margin-left: 1.5rem;
-        }
-      }
+    &__block {
+      margin: 0 1.5rem 0 0;
+    }
+
+    &__header {
+      font-family: "AvenirBold";
+      font-size: 1.438rem;
+      line-height: 2rem;
+      margin-left: 1.5rem;
+    }
+
+    &__subheader {
+      @include h3-subheader;
+      margin-left: 1.5rem;
+    }
+
+    &__image {
+      // width: 45rem;
+      width: 94vw;
+    }
+
+    &__subdivision {
+      flex-direction: row;
+    }
+    &__paragraph {
+      margin-left: 1.5rem;
     }
   }
 }
@@ -558,33 +579,37 @@ body {
     &__title {
       margin-left: 11.25rem;
     }
-    &__container {
-      &--image {
-        margin: 3rem 11.25rem;
-        width: 56rem;
-      }
-      &--block {
-        width: 56rem;
-        margin: 0 16.25rem 0 11.25rem;
-      }
-      &--header {
-        margin: 0 0 0 2.5rem;
-      }
-      &--subheader {
-        margin: 2.5rem 0 3.5rem 2.5rem;
-      }
-      &--subdivision {
-        &--paragraph {
-          width: 26.25rem;
-          font-size: 0.875rem;
-          margin-left: 2.5rem;
-        }
-      }
+
+    &__block {
+      width: 56rem;
+      margin: 0 16.25rem 0 11.25rem;
+    }
+
+    &__header {
+      margin: 0 0 0 2.5rem;
+    }
+
+    &__subheader {
+      margin: 2.5rem 0 3.5rem 2.5rem;
+    }
+
+    &__image {
+      margin: 3rem 11.25rem;
+      width: 63vw;
+    }
+
+    &__paragraph {
+      width: 26.25rem;
+      font-size: 0.875rem;
+      margin-left: 2.5rem;
     }
   }
 }
 
 // Photo Gallery Section
+// *
+// *
+// *
 
 .photos {
   @include flex-column;
@@ -609,16 +634,17 @@ body {
     @include flex-column;
     margin: 0;
     padding: 0;
+  }
 
-    &--images {
-      width: 18rem;
-      padding: 1rem;
-      filter: grayscale(90%);
-      transition: $transition-700;
-      &:hover {
-        filter: none;
-        transform: scale(1.05);
-      }
+  &__images {
+    // width: 18rem;
+    width: 92vw;
+    padding: 1rem;
+    filter: grayscale(90%);
+    transition: $transition-700;
+    &:hover {
+      filter: none;
+      transform: scale(1.05);
     }
   }
 }
@@ -637,11 +663,12 @@ body {
       flex-wrap: wrap;
       @include justify-align-center;
       margin-bottom: 2rem;
-      &--images {
-        width: 30%;
-        margin: 0;
-        padding: 0.75rem;
-      }
+    }
+
+    &__images {
+      width: 30%;
+      margin: 0;
+      padding: 0.75rem;
     }
   }
 }
@@ -655,18 +682,22 @@ body {
     }
     &__gallery {
       margin: 0 9.75rem 2.5rem 9.75rem;
-      &--images {
-        @include flex-row;
-        @include justify-align-center;
-        width: 30%;
-        margin: 0;
-        padding: 0.75rem;
-      }
+    }
+    &__images {
+      @include flex-row;
+      @include justify-align-center;
+      width: 30%;
+      margin: 0;
+      padding: 0.75rem;
     }
   }
 }
 
 // Comments Section
+// *
+// *
+// *
+
 .comments {
   @include flex-column;
 
@@ -832,6 +863,9 @@ body {
 }
 
 // Footer Section
+// *
+// *
+// *
 
 .footer {
   background-color: $black;
@@ -850,37 +884,37 @@ body {
   &__container {
     @include flex-column;
     width: 18.75rem;
+  }
 
-    &--heading {
-      @include h1-header-desktop;
-      margin: 2rem 0 0 1rem;
-      align-self: flex-start;
-      transition: $transition-700;
-      &:hover {
-        transform: scale(1.05);
-      }
+  &__heading {
+    @include h1-header-desktop;
+    margin: 2rem 0 0 1rem;
+    align-self: flex-start;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
     }
+  }
 
-    &--social {
-      @include flex-row;
-      justify-content: flex-start;
-      margin: 1rem 0 0.5rem 1rem;
+  &__social {
+    @include flex-row;
+    justify-content: flex-start;
+    margin: 1rem 0 0.5rem 1rem;
+  }
 
-      &--image {
-        margin: 0 2rem 1.25rem 0;
-        transition: $transition-650;
-        &:hover {
-          transform: scale(1.5);
-        }
-      }
+  &__social-image {
+    margin: 0 2rem 1.25rem 0;
+    transition: $transition-650;
+    &:hover {
+      transform: scale(1.5);
     }
+  }
 
-    &--logo {
-      display: none;
-      transition: $transition-700;
-      &:hover {
-        transform: scale(1.05);
-      }
+  &__logo {
+    display: none;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -890,38 +924,34 @@ body {
     margin-left: 1rem;
     margin-bottom: 1.5rem;
   }
+}
 
-  .info__container {
+.info {
+  &__container {
     @include flex-column;
     justify-content: flex-start;
     align-items: flex-start;
     margin-left: 1rem;
-
-    &--upper-block {
-      margin-bottom: 1.25rem;
-    }
-
-    &--block--text {
-      @include h4-paragraph;
-    }
-
-    &--bottom-block {
-      margin-bottom: 1.5rem;
-    }
-
-    &--block--subtext {
-      @include h5-labels;
-    }
-
-    &--label {
-      @include h4-lists;
-      margin-bottom: 1.5rem;
-    }
-
-    &--mail {
-      text-decoration: none;
-      color: $white;
-    }
+  }
+  &__container-upperBlock {
+    margin-bottom: 1.25rem;
+  }
+  &__container-blockText {
+    @include h4-paragraph;
+  }
+  &__container-bottomBlock {
+    margin-bottom: 1.5rem;
+  }
+  &__container-blockSubtext {
+    @include h5-labels;
+  }
+  &__container-label {
+    @include h4-lists;
+    margin-bottom: 1.5rem;
+  }
+  &__container-email {
+    text-decoration: none;
+    color: $white;
   }
 }
 
@@ -944,32 +974,34 @@ body {
       align-items: flex-end;
       margin-bottom: 1rem;
       width: 100%;
+    }
 
-      &--heading {
-        margin: 2.5rem 0 0 1.5rem;
-        line-height: 1.75rem;
-      }
+    &__heading {
+      margin: 2.5rem 0 0 1.5rem;
+      line-height: 1.75rem;
+    }
 
-      &--social {
-        align-content: flex-end;
-        margin: 0 0 0 2.5rem;
-        &--image {
-          margin: 0 2rem 0 0;
-        }
-      }
+    &__social {
+      align-content: flex-end;
+      margin: 0 0 0 2.5rem;
+    }
 
-      &--logo {
-        display: inline-flex;
-        margin: 0 1.5rem 0 2.5rem;
-      }
+    &__social-image {
+      margin: 0 2rem 0 0;
+    }
+
+    &__logo {
+      display: inline-flex;
+      margin: 0 1.5rem 0 2.5rem;
     }
 
     &__copyright {
       width: 70%;
       margin: 0 0 3rem 1.5rem;
     }
-
-    .info__container {
+  }
+  .info {
+    &__container {
       margin: 1.5rem 0 0 1.5rem;
       width: 100%;
     }
@@ -984,18 +1016,18 @@ body {
       align-items: flex-start;
       width: 75%;
       margin: 0 0 0 11.25rem;
+    }
 
-      &--heading {
-        margin: 3rem 0 0 0;
-      }
+    &__heading {
+      margin: 3rem 0 0 0;
+    }
 
-      &--social {
-        margin-left: 9rem;
-      }
+    &__social {
+      margin-left: 9rem;
+    }
 
-      &--logo {
-        margin: 3.5rem 1.5rem 0 0;
-      }
+    &__logo {
+      margin: 3.5rem 1.5rem 0 0;
     }
 
     &__copyright {
@@ -1003,27 +1035,26 @@ body {
       width: 70%;
       margin: 1rem 0 3rem 11.25rem;
     }
+  }
 
-    .info__container {
+  .info {
+    &__container {
       align-content: flex-start;
       justify-content: flex-start;
       margin: 3.5rem 4rem 0 0;
-      &--block--text {
-        @include h3-subheader;
-      }
-
-      &--bottom-block {
-        margin-bottom: 1.5rem;
-      }
-
-      &--block--subtext {
-        font-size: 0.875rem;
-      }
-
-      &--label {
-        font-size: 0.85rem;
-        margin-bottom: 1.5rem;
-      }
+    }
+    &__container-blockText {
+      @include h3-subheader;
+    }
+    &__container-bottomBlock {
+      margin-bottom: 1.5rem;
+    }
+    &__container-blockSubtext {
+      font-size: 0.875rem;
+    }
+    &__container-label {
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
     }
   }
 }
