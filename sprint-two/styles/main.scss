@@ -50,7 +50,18 @@ body {
     color: $white;
     position: relative;
     transition: $transition-500;
-    &--active {
+    &--bio {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1.875rem;
+        left: -3.125rem;
+        height: 0.25rem;
+        width: 10rem;
+        background: $white;
+      }
+    }
+    &--shows {
       &::after {
         content: "";
         position: absolute;
@@ -81,15 +92,27 @@ body {
       text-decoration: none;
       color: $white;
 
-      &--active {
+      &--bio {
         &::after {
           content: "";
           position: absolute;
           top: 2.876rem;
           bottom: 0;
-          left: -0.75rem;
+          left: -0.5rem;
           height: 0.25rem;
-          width: 6.25rem;
+          width: 6rem;
+          background: $white;
+        }
+      }
+      &--shows {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2.876rem;
+          bottom: 0;
+          left: -1.4rem;
+          height: 0.25rem;
+          width: 6rem;
           background: $white;
         }
       }
@@ -108,7 +131,7 @@ body {
       padding: 0;
     }
     &__link {
-      &--active {
+      &--bio {
         &::after {
           content: "";
           position: absolute;
@@ -170,6 +193,267 @@ body {
       @include hero-header;
       width: 47%;
       margin: 11.25rem;
+    }
+  }
+}
+
+// Shows Header Section
+
+.showsPageHeader {
+  background-image: url("/assets/images/alexander-popov-3InMDrsuYrk-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 29.5rem;
+  width: 100%;
+  margin: 0;
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    @include flex-column;
+    margin-left: 1rem;
+  }
+
+  &__title {
+    font-family: "AvenirBold";
+    font-size: 2rem;
+    width: 90%;
+    color: $white;
+    margin: 1rem 0 4rem 0;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__subheader {
+    @include h4-paragraph;
+    width: 60%;
+    color: $white;
+    margin-top: 4rem;
+  }
+
+  &__music {
+    width: 90%;
+    height: 6.25rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@include tablet {
+  .showsPageHeader {
+    height: 40rem;
+
+    &__container {
+      margin-left: 1.5rem;
+    }
+
+    &__title {
+      width: 75%;
+      font-size: 3.75rem;
+    }
+
+    &__subheader {
+      @include h2-header;
+      margin-top: 6rem;
+    }
+
+    &__music {
+      align-self: flex-start;
+      margin-left: 1.5rem;
+      margin-bottom: 6rem;
+      width: 55%;
+      height: 10rem;
+    }
+  }
+}
+
+@include desktop {
+  .showsPageHeader {
+    height: 41rem;
+    width: 100vw;
+    @include flex-row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+
+    &__container {
+      width: 40%;
+      margin-left: 11.25rem;
+      @include flex-column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    &__title {
+      @include hero-header;
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    &__subheader {
+      width: 70%;
+      margin-top: 0;
+    }
+
+    &__music {
+      width: 27.25rem;
+      height: 9.125rem;
+      margin-left: 4rem;
+      margin-top: 17.5rem;
+    }
+  }
+}
+
+// Shows Dates Section
+
+.shows {
+  @include flex-column;
+  margin-bottom: 2rem;
+  &__header {
+    font-family: "AvenirBold";
+    font-size: 1.5rem;
+    color: $black;
+    width: 60%;
+    margin: 2rem 0 40px 1rem;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__container {
+    @include flex-column;
+  }
+
+  &__titleBlock {
+    &--heading {
+      display: none;
+    }
+  }
+}
+
+.container__block {
+  margin: 0 16px 16px 16px;
+  border-bottom: 2px $mercury solid;
+
+  &--card-title {
+    color: $silver;
+    margin-bottom: 16px;
+  }
+
+  &--card-input {
+    margin-bottom: 24px;
+  }
+
+  &--card-date {
+    @include h3-subheader;
+    color: $black;
+  }
+
+  &--button {
+    background-color: $black;
+    @include h4-lists-mob;
+    font-family: "AvenirDemi";
+    color: $white;
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.313rem;
+    border: 0.125rem $black solid;
+    margin-bottom: 16px;
+  }
+}
+
+@include tablet {
+  .shows {
+    &__header {
+      margin-left: 1.5rem;
+    }
+
+    &__container {
+      justify-content: flex-end;
+    }
+
+    &__titleBlock {
+      @include flex-row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      &--heading {
+        display: inline-flex;
+        @include h5-labels;
+        color: $silver;
+        margin-left: 1.5rem;
+        margin-right: 7.2rem;
+      }
+
+      &--date {
+        margin-right: 7.6rem;
+      }
+    }
+  }
+
+  .container__block {
+    @include flex-row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    margin: 1rem 1.5rem 0 1.5rem;
+
+    &--card {
+      justify-content: flex-start;
+      width: 28%;
+    }
+
+    &--card-title {
+      display: none;
+    }
+
+    &--card-input {
+      @include h4-paragraph-mob;
+    }
+
+    &--card-date {
+      font-size: 0.8rem;
+    }
+
+    &--button {
+      width: 25%;
+    }
+  }
+}
+
+@include desktop {
+  .shows {
+    @include flex-row;
+    justify-content: space-around;
+    margin-top: 3rem;
+    width: 100%;
+
+    &__header {
+      @include h1-header-desktop;
+      margin: 0 0 0 11.25rem;
+      width: 20%;
+    }
+
+    &__container {
+      justify-content: flex-end;
+      width: 50.25rem;
+      margin-top: 1rem;
+      margin-right: 8rem;
+    }
+
+    &__titleBlock--heading {
+      margin-right: 8rem;
+    }
+  }
+
+  .container__block {
+    &--button {
+      width: 10rem;
+    }
+
+    &--card-input {
+      font-size: 1rem;
     }
   }
 }
@@ -401,6 +685,7 @@ body {
     @include flex-column;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2.5rem;
   }
 
   &__comment {

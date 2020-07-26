@@ -1,4 +1,4 @@
-const showsSection = document.getElementById("shows");
+const showsSection = document.getElementById("showsSection");
 
 const shows = [
   {
@@ -60,6 +60,7 @@ function createShowElement(show) {
   containerBlockDateTitle.innerText = "DATE";
   const containerBlockDateInput = document.createElement("p"); // stores dates for each show
   containerBlockDateInput.className = "container__block--card-input";
+  containerBlockDateInput.classList.add("container__block--card-date");
   containerBlockDateInput.innerText = show.date;
 
   const containerBlockVenueTitle = document.createElement("h4"); // venue title for each show
@@ -97,7 +98,7 @@ function createShowElement(show) {
 
 const showsHeader = document.createElement("h1"); // section header
 showsHeader.className = "shows__header";
-showsHeader.innerText = "SHOWS";
+showsHeader.innerText = "Shows";
 showsSection.appendChild(showsHeader);
 
 const showsTitleBlock = document.createElement("div"); // container to keep h3's
@@ -105,7 +106,8 @@ showsTitleBlock.className = "shows__titleBlock";
 
 const showsTitleBlockDate = document.createElement("h3"); // table header - dates
 showsTitleBlockDate.className = "shows__titleBlock--heading";
-showsTitleBlockDate.innerText = "DATE";
+showsTitleBlockDate.classList.add("shows__titleBlock--date");
+showsTitleBlockDate.innerText = "DATES";
 showsTitleBlock.appendChild(showsTitleBlockDate);
 const showsTitleBlockVenue = document.createElement("h3"); // table header- venues
 showsTitleBlockVenue.className = "shows__titleBlock--heading";

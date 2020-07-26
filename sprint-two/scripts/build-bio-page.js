@@ -83,9 +83,9 @@ function submitForm(event) {
   event.preventDefault();
   //   console.log("form was submitted");
 
-  var commentAuthor = event.target.commentAuthor.value;
-  var commentText = event.target.commentText.value;
-  var commentDate = new Date();
+  let commentAuthor = event.target.commentAuthor.value;
+  let commentText = event.target.commentText.value;
+  let commentDate = new Date();
 
   if (commentAuthor !== "" && commentText !== "") {
     comments.push({
