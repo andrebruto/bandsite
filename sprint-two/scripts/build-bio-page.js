@@ -22,13 +22,18 @@ const comments = [
 ];
 
 function loopThroughComments(commentsArr) {
-  for (let i = 0; i < commentsArr.length; i++) {
+  // sorts through comments dates
+  const sortedArry = commentsArr.sort(function (a, b) {
+    return b.date - a.date;
+  });
+
+  for (let i = 0; i < sortedArry.length; i++) {
     // loops into the comments array
-    createCommentElement(commentsArr[i]); // calls the function with the loops to pass each object of the array
+    displayComment(commentsArr[i]); // calls the function with the loops to pass each object of the array
   }
 }
 
-function createCommentElement(comment) {
+function displayComment(comment) {
   // creates the div that will store each full comment structure
   const commentsComment = document.createElement("div");
   commentsComment.classList.add("comments__comment");
@@ -59,7 +64,7 @@ function createCommentElement(comment) {
   // adds the date of the comment
   const commentsCommentDate = document.createElement("h5");
   commentsCommentDate.classList.add("comments__comment-date");
-  commentsCommentDate.innerText = comment.date.toDateString();
+  commentsCommentDate.innerText = comment.date.toLocaleDateString("en-US");
   commentsCommentTitle.appendChild(commentsCommentDate);
 
   //adds the text of the comment

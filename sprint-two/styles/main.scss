@@ -389,7 +389,6 @@ body {
   &__header {
     font-family: "AvenirBold";
     font-size: 1.375rem;
-    width: 18.75rem;
     margin: 2rem 0 0.5rem 1rem;
     align-self: flex-start;
     transition: $transition-700;
@@ -400,25 +399,61 @@ body {
 
   &__block {
     @include flex-column;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__comment {
     @include flex-row;
-    justify-content: space-evenly;
-    border-bottom: 2px $silver solid;
+    justify-content: space-between;
+    border-bottom: 0.125rem $mercury solid;
+    width: 18rem;
 
     &-image {
-      height: 50px;
-      width: 50px;
+      height: 2.8rem;
+      width: 2.8rem;
       border-radius: 50%;
       object-fit: cover;
       object-position: left center;
+      margin-top: 3.125rem;
+    }
+
+    &-filledForm {
+      @include flex-column;
+      width: 14rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &-title {
+      @include flex-row;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 1.5rem 0 1rem 0;
+    }
+
+    &-author {
+      @include h3-subheader;
+    }
+
+    &-date {
+      @include h4-lists-mob;
+      font-size: 0.9rem;
+      color: $silver;
+    }
+
+    &-photo {
+      background-color: $silver;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 50%;
+      margin-top: 1.5rem;
     }
   }
 
   &__form {
     @include flex-column;
-    width: 224px;
+    width: 14rem;
+    margin: 2rem 0;
 
     &-authorLabel {
       @include h5-labels-mob;
@@ -426,10 +461,11 @@ body {
     }
 
     &-authorInput {
-      border-radius: 5px;
+      border-radius: 0.313rem;
       background-color: $alabaster;
-      border: 2px $black solid;
-      height: 40px;
+      border: 0.125rem $black solid;
+      height: 2.5rem;
+      margin: 0.125rem 0 1rem 0;
     }
 
     &-textLabel {
@@ -439,9 +475,11 @@ body {
 
     &-textInput {
       background-color: $alabaster;
-      border-radius: 5px;
-      height: 80px;
-      border: 1px $mercury solid;
+      border-radius: 0.313rem;
+      height: 5rem;
+      border: 0.063rem $mercury solid;
+      padding: 0.4rem 0.1rem;
+      margin: 0.125rem 0 1rem 0;
     }
 
     &-button {
@@ -449,13 +487,61 @@ body {
       @include h4-lists-mob;
       font-family: "AvenirDemi";
       color: $white;
-      height: 40px;
-      border-radius: 5px;
-      border: 2px $black solid;
+      height: 2.5rem;
+      border-radius: 0.313rem;
+      border: 0.125rem $black solid;
     }
 
     &-author {
       @include h4-paragraph;
+    }
+  }
+}
+
+@include tablet {
+  .comments {
+    &__header {
+      @include h1-header-desktop;
+      align-self: flex-start;
+      margin: 2.5rem 0 1rem 1.5rem;
+    }
+
+    &__comment {
+      width: 60vw;
+      &-filledForm {
+        width: 52vw;
+      }
+    }
+
+    &__form {
+      width: 51vw;
+    }
+  }
+}
+
+@include desktop {
+  .comments {
+    &__header {
+      @include h1-header-desktop;
+      align-self: flex-start;
+      margin-left: 11.25rem;
+    }
+
+    &__comment {
+      width: 34.375rem;
+
+      &-filledForm {
+        width: 29.375rem;
+      }
+    }
+
+    &__form {
+      width: 28.75rem;
+
+      &-button {
+        width: 10rem;
+        align-self: flex-end;
+      }
     }
   }
 }
