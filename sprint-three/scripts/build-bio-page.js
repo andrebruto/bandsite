@@ -1,44 +1,39 @@
 const commentsSection = document.getElementById("comments");
+const commentsBlock = document.getElementById("comments-output");
+const commentForm = document.getElementById("commentForm");
 
-const comments = [
-  {
-    author: "Micheal Lyons",
-    date: new Date("12/18/2018"),
-    comment:
-      "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.",
-  },
-  {
-    author: "Gary Wong",
-    date: new Date("12/18/2018"),
-    comment:
-      "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-  },
-  {
-    author: "Theodore Duncan",
-    date: new Date("11/15/2018"),
-    comment:
-      "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-  },
-];
+const loadComments = () => {
+  getComments()
+    .then((result) => {
+      // console.log(result);
+      // sorts through comments dates
+      const sortedArry = result.sort((a, b) => b.timestamp - a.timestamp);
 
-function loopThroughComments(commentsArr) {
-  // sorts through comments dates
-  const sortedArry = commentsArr.sort(function (a, b) {
-    return b.date - a.date;
+      for (let i = 0; i < sortedArry.length; i++) {
+        // calls the function with the loops to pass each object of the array
+        const commentBlock = createCommentBlock(result[i]);
+        commentsBlock.appendChild(commentBlock);
+      }
+
+      return;
+    })
+    .catch((error) => console.log(error));
+};
+
+const deleteComment = (event) => {
+  console.log(event.target.value);
+  const targetCommentId = event.target.value;
+  deletePost(targetCommentId).then(() => {
+    const child = document.getElementById(targetCommentId);
+    commentsBlock.removeChild(child);
   });
+};
 
-  for (let i = 0; i < sortedArry.length; i++) {
-    // loops into the comments array
-    displayComment(commentsArr[i]); // calls the function with the loops to pass each object of the array
-  }
-}
-
-function displayComment(comment) {
+const createCommentBlock = (comment) => {
   // creates the div that will store each full comment structure
   const commentsComment = document.createElement("div");
   commentsComment.classList.add("comments__comment");
-  const commentsBlock = document.getElementById("comments-output");
-  commentsBlock.appendChild(commentsComment);
+  commentsComment.setAttribute("id", comment.id);
 
   // creates the image of the author of the comment
   const commentPhoto = document.createElement("img");
@@ -52,19 +47,21 @@ function displayComment(comment) {
 
   // creates a div to store both the comment author and the comment date
   const commentsCommentTitle = document.createElement("div");
+
   commentsCommentTitle.classList.add("comments__comment-title");
   commentFilledForm.appendChild(commentsCommentTitle);
 
   // adds the author of the comment
   const commentsCommentAuthor = document.createElement("h4");
   commentsCommentAuthor.classList.add("comments__comment-author");
-  commentsCommentAuthor.innerText = comment.author;
+  commentsCommentAuthor.innerText = comment.name;
   commentsCommentTitle.appendChild(commentsCommentAuthor);
 
   // adds the date of the comment
   const commentsCommentDate = document.createElement("h5");
   commentsCommentDate.classList.add("comments__comment-date");
-  commentsCommentDate.innerText = comment.date.toLocaleDateString("en-US");
+  const unixToDate = new Date(comment.timestamp);
+  commentsCommentDate.innerText = unixToDate.toLocaleDateString("en-US");
   commentsCommentTitle.appendChild(commentsCommentDate);
 
   //adds the text of the comment
@@ -72,32 +69,44 @@ function displayComment(comment) {
   commentsCommentText.classList.add("comments__comment-text");
   commentsCommentText.innerText = comment.comment;
   commentFilledForm.appendChild(commentsCommentText);
-}
 
-loopThroughComments(comments);
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "x";
+  deleteButton.value = comment.id;
+  deleteButton.addEventListener("click", deleteComment);
+  commentsCommentTitle.appendChild(deleteButton);
 
-const commentForm = document.getElementById("commentForm");
+  return commentsComment;
+};
+
+const submitForm = (event) => {
+  event.preventDefault();
+
+  const commentAuthor = event.target.commentAuthor.value;
+  const commentText = event.target.commentText.value;
+
+  if (commentAuthor.trim(" ") === "" && commentText.trim(" ") === "") {
+    alert("Name and Comment must be filled");
+    return;
+  }
+
+  createComment({
+    name: commentAuthor,
+    comment: commentText,
+  })
+    .then((result) => {
+      // console.log(result);
+      console.log("form was submitted");
+      const commentBlock = createCommentBlock(result.data);
+      commentsBlock.prepend(commentBlock);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  event.target.reset();
+};
+
 commentForm.addEventListener("submit", submitForm);
 
-function submitForm(event) {
-  event.preventDefault();
-  //   console.log("form was submitted");
-
-  let commentAuthor = event.target.commentAuthor.value;
-  let commentText = event.target.commentText.value;
-  let commentDate = new Date();
-
-  if (commentAuthor !== "" && commentText !== "") {
-    comments.push({
-      author: commentAuthor,
-      comment: commentText,
-      date: commentDate,
-    });
-    // console.log(comments);
-    // commentsSection.innerHTML = "";
-    const commentsBlock = document.getElementById("comments-output");
-    commentsBlock.innerHTML = "";
-    loopThroughComments(comments);
-    event.target.reset();
-  }
-}
+loadComments();
