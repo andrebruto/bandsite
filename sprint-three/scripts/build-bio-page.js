@@ -71,10 +71,11 @@ const createCommentBlock = (comment) => {
   commentFilledForm.appendChild(commentsCommentText);
 
   const deleteButton = document.createElement("button");
-  deleteButton.innerText = "x";
+  deleteButton.classList.add("comments__comment-deleteButton");
+  deleteButton.innerText = "DELETE";
   deleteButton.value = comment.id;
   deleteButton.addEventListener("click", deleteComment);
-  commentsCommentTitle.appendChild(deleteButton);
+  commentFilledForm.appendChild(deleteButton);
 
   return commentsComment;
 };

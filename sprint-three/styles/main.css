@@ -938,6 +938,24 @@ body {
   width: 18rem;
 }
 
+.comments__comment-deleteButton {
+  text-align: center;
+  background-color: #323232;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  font-family: "AvenirDemi";
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: #FFFFFF;
+  height: 2rem;
+  width: 2rem;
+  min-width: 6rem;
+  min-height: 2rem;
+  margin-top: 1rem;
+  border-radius: 0.313rem;
+  border: 0.125rem #323232 solid;
+}
+
 .comments__comment-image {
   height: 2.8rem;
   width: 2.8rem;
@@ -957,6 +975,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 14rem;
   margin-bottom: 1.5rem;
 }

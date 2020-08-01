@@ -724,6 +724,22 @@ body {
     border-bottom: 0.125rem $mercury solid;
     width: 18rem;
 
+    &-deleteButton {
+      text-align: center;
+      background-color: $black;
+      @include h4-lists-mob;
+      font-family: "AvenirDemi";
+      align-self: flex-end;
+      color: $white;
+      height: 2rem;
+      width: 2rem;
+      min-width: 6rem;
+      min-height: 2rem;
+      margin-top: 1rem;
+      border-radius: 0.313rem;
+      border: 0.125rem $black solid;
+    }
+
     &-image {
       height: 2.8rem;
       width: 2.8rem;
@@ -735,6 +751,7 @@ body {
 
     &-filledForm {
       @include flex-column;
+      justify-content: flex-start;
       width: 14rem;
       margin-bottom: 1.5rem;
     }
@@ -753,6 +770,7 @@ body {
     &-date {
       @include h4-lists-mob;
       font-size: 0.9rem;
+      // margin-left: 20rem;
       color: $silver;
     }
 
