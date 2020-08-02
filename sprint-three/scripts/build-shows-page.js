@@ -45,7 +45,8 @@ const createShowElement = (show) => {
   const containerBlockDateInput = document.createElement("p"); // stores dates for each show
   containerBlockDateInput.classList.add("container__block-cardInput");
   containerBlockDateInput.classList.add("container__block-cardDate");
-  containerBlockDateInput.innerText = show.date.toLowerCase();
+  containerBlockDateInput.innerText = show.date;
+  // console.log(show.date);
 
   const containerBlockVenueTitle = document.createElement("h4"); // venue title for each show
   containerBlockVenueTitle.classList.add("container__block-cardTitle");
