@@ -1,0 +1,154 @@
+.shows {
+  @include flex-column;
+  margin-bottom: 2rem;
+  &__header {
+    font-family: "AvenirBold";
+    font-size: 1.5rem;
+    color: $black;
+    width: 60%;
+    margin: 2rem 0 40px 1rem;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__container {
+    @include flex-column;
+  }
+
+  &__titleBlock-heading {
+    display: none;
+  }
+}
+
+.container {
+  &__block {
+    margin: 0 16px 16px 16px;
+    border-bottom: 2px $mercury solid;
+  }
+
+  &__block-cardTitle {
+    color: $silver;
+    margin-bottom: 16px;
+  }
+
+  &__block-cardInput {
+    margin-bottom: 24px;
+  }
+
+  &__block-cardDate {
+    @include h3-subheader;
+    color: $black;
+  }
+
+  &__block-button {
+    background-color: $black;
+    @include h4-lists-mob;
+    font-family: "AvenirDemi";
+    color: $white;
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.313rem;
+    border: 0.125rem $black solid;
+    margin-bottom: 16px;
+  }
+}
+
+@include tablet {
+  .shows {
+    &__header {
+      margin-left: 1.5rem;
+    }
+
+    &__container {
+      justify-content: flex-end;
+    }
+
+    &__titleBlock {
+      @include flex-row;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    &__titleBlockDate {
+      margin-right: 7.6rem;
+    }
+
+    &__titleBlock-heading {
+      display: inline-flex;
+      @include h5-labels;
+      color: $silver;
+      margin-left: 1.5rem;
+      margin-right: 7.2rem;
+    }
+  }
+
+  .container {
+    &__block {
+      @include flex-row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 95%;
+      margin: 1rem 1.5rem 0 1.5rem;
+    }
+
+    &__block-card {
+      justify-content: flex-start;
+      width: 28%;
+    }
+
+    &__block-cardTitle {
+      display: none;
+    }
+
+    &__block-cardInput {
+      @include h4-paragraph-mob;
+    }
+
+    &__block-cardDate {
+      font-size: 0.8rem;
+    }
+
+    &__block-button {
+      width: 25%;
+      margin-left: 2rem;
+    }
+  }
+}
+
+@include desktop {
+  .shows {
+    @include flex-row;
+    justify-content: space-around;
+    margin-top: 3rem;
+    width: 100%;
+
+    &__header {
+      @include h1-header-desktop;
+      margin: 0 0 0 11.25rem;
+      width: 10%;
+    }
+
+    &__container {
+      justify-content: flex-end;
+      width: 52rem;
+      margin-top: 1rem;
+      margin-right: 8rem;
+    }
+
+    &__titleBlock-heading {
+      margin-right: 8rem;
+    }
+  }
+
+  .container {
+    &__block-button {
+      width: 10rem;
+      margin-left: 3rem;
+    }
+
+    &__block-cardInput {
+      font-size: 1rem;
+    }
+  }
+}

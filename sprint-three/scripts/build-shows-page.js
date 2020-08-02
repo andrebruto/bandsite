@@ -1,29 +1,24 @@
 const showsSection = document.getElementById("showsSection");
-// console.log(showsSection);
+
+// function that calls the axios get, loops the results and calls the function
+// that creates the shows elements
 const loadShows = () => {
   getShows()
     .then((result) => {
-      // console.log(result);
       const sortedArry = result.sort((a, b) => b.date - a.date);
-      // console.log(showsArr);
       for (let i = 0; i < sortedArry.length; i++) {
-        // loops into the shows array
-        const showBlock = createShowElement(result[i]); // calls the function with the loops to pass each object of the array
-        // console.log(showBlock);
-        // showsSection.appendChild(showBlock);
+        const showBlock = createShowElement(result[i]);
       }
       return;
     })
     .catch((error) => console.log(error));
 };
 
+// function that creates the show html structure
 const createShowElement = (show) => {
   const showsShow = document.createElement("div");
   showsShow.classList.add("container__block");
   showsShow.setAttribute("id", show.id);
-
-  // const containerBlock = document.createElement("div"); // container to keep divs of dates, venues and locations
-  // containerBlock.classList.add("container__block");
 
   const containerBlockDate = document.createElement("div"); // container to store dates
   containerBlockDate.classList.add("container__block-card");
@@ -112,4 +107,4 @@ showsContainer.classList.add("shows__container");
 
 showsContainer.appendChild(showsTitleBlock); // appends div with h3 titles to the main container
 // console.log(showsTitleBlock);
-loadShows(); // calls the function passing the shows array
+loadShows(); // calls the function that starts the process to load the shows

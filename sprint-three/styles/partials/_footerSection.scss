@@ -1,0 +1,195 @@
+// ---------------------------------------
+// FOOTER SECTION
+// ---------------------------------------
+
+.footer {
+  background-color: $black;
+  color: $white;
+  @include flex-column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+
+  &__header {
+    @include flex-column;
+    flex-wrap: wrap;
+  }
+
+  &__container {
+    @include flex-column;
+    width: 18.75rem;
+  }
+
+  &__heading {
+    @include h1-header-desktop;
+    margin: 2rem 0 0 1rem;
+    align-self: flex-start;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__social {
+    @include flex-row;
+    justify-content: flex-start;
+    margin: 1rem 0 0.5rem 1rem;
+  }
+
+  &__social-image {
+    margin: 0 2rem 1.25rem 0;
+    transition: $transition-650;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  &__logo {
+    display: none;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__copyright {
+    font-size: 0.75rem;
+    width: 12.5rem;
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.info {
+  &__container {
+    @include flex-column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 1rem;
+  }
+  &__container-upperBlock {
+    margin-bottom: 1.25rem;
+  }
+  &__container-blockText {
+    @include h4-paragraph;
+  }
+  &__container-bottomBlock {
+    margin-bottom: 1.5rem;
+  }
+  &__container-blockSubtext {
+    @include h5-labels;
+  }
+  &__container-label {
+    @include h4-lists;
+    margin-bottom: 1.5rem;
+  }
+  &__container-email {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+@include tablet {
+  .footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    &__header {
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    &__container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    &__heading {
+      margin: 2.5rem 0 0 1.5rem;
+      line-height: 1.75rem;
+    }
+
+    &__social {
+      align-content: flex-end;
+      margin: 0 0 0 2.5rem;
+    }
+
+    &__social-image {
+      margin: 0 2rem 0 0;
+    }
+
+    &__logo {
+      display: inline-flex;
+      margin: 0 1.5rem 0 2.5rem;
+    }
+
+    &__copyright {
+      width: 70%;
+      margin: 0 0 3rem 1.5rem;
+    }
+  }
+  .info {
+    &__container {
+      margin: 1.5rem 0 0 1.5rem;
+      width: 100%;
+    }
+  }
+}
+
+@include desktop {
+  .footer {
+    &__container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 75%;
+      margin: 0 0 0 11.25rem;
+    }
+
+    &__heading {
+      margin: 3rem 0 0 0;
+    }
+
+    &__social {
+      margin-left: 9rem;
+    }
+
+    &__logo {
+      margin: 3.5rem 1.5rem 0 0;
+    }
+
+    &__copyright {
+      font-size: 0.875rem;
+      width: 70%;
+      margin: 1rem 0 3rem 11.25rem;
+    }
+  }
+
+  .info {
+    &__container {
+      align-content: flex-start;
+      justify-content: flex-start;
+      margin: 3.5rem 4rem 0 0;
+    }
+    &__container-blockText {
+      @include h3-subheader;
+    }
+    &__container-bottomBlock {
+      margin-bottom: 1.5rem;
+    }
+    &__container-blockSubtext {
+      font-size: 0.875rem;
+    }
+    &__container-label {
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

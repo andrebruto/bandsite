@@ -1,0 +1,133 @@
+// ---------------------------------------
+// Navigation Bar
+// ---------------------------------------
+
+.navbar {
+  background-color: $black;
+  @include flex-column;
+  @include justify-align-center;
+  width: 100%;
+  height: 5rem;
+  padding: 0;
+  margin: 0;
+
+  &__logo {
+    margin-bottom: 0.5rem;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__list {
+    @include flex-row;
+    list-style: none;
+    justify-content: space-around;
+    width: 20rem;
+    margin: 0;
+  }
+
+  &__item {
+    @include h3-subheader;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    position: relative;
+    transition: $transition-500;
+    &--bio {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1.875rem;
+        left: -3.125rem;
+        height: 0.25rem;
+        width: 10rem;
+        background: $white;
+      }
+    }
+    &--shows {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1.875rem;
+        left: -3.125rem;
+        height: 0.25rem;
+        width: 10rem;
+        background: $white;
+      }
+    }
+    &:hover {
+      color: $brainflix-blue-light;
+    }
+  }
+}
+
+@include tablet {
+  .navbar {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    &__logo {
+      margin-left: 1.5rem;
+      padding-top: 0.938rem;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $white;
+
+      &--bio {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2.876rem;
+          bottom: 0;
+          left: -0.5rem;
+          height: 0.25rem;
+          width: 6rem;
+          background: $white;
+        }
+      }
+      &--shows {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2.876rem;
+          bottom: 0;
+          left: -1.4rem;
+          height: 0.25rem;
+          width: 6rem;
+          background: $white;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .navbar {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    &__logo {
+      margin-left: 11.25rem;
+      padding: 0;
+    }
+    &__link {
+      &--bio {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2.875rem;
+          left: 0;
+          height: 0.25rem;
+          width: 5rem;
+          background: $white;
+        }
+      }
+    }
+  }
+}

@@ -2,10 +2,11 @@ const commentsSection = document.getElementById("comments");
 const commentsBlock = document.getElementById("comments-output");
 const commentForm = document.getElementById("commentForm");
 
+// function that calls the axios get, loops the results and calls the function
+// that creates the shows elements
 const loadComments = () => {
   getComments()
     .then((result) => {
-      // console.log(result);
       // sorts through comments dates
       const sortedArry = result.sort((a, b) => b.timestamp - a.timestamp);
 
@@ -20,6 +21,7 @@ const loadComments = () => {
     .catch((error) => console.log(error));
 };
 
+// function to delete the posted comments
 const deleteComment = (event) => {
   console.log(event.target.value);
   const targetCommentId = event.target.value;
@@ -29,6 +31,7 @@ const deleteComment = (event) => {
   });
 };
 
+// function that creates the comments html structure
 const createCommentBlock = (comment) => {
   // creates the div that will store each full comment structure
   const commentsComment = document.createElement("div");
@@ -80,6 +83,7 @@ const createCommentBlock = (comment) => {
   return commentsComment;
 };
 
+// function with the event to post the comment in the html structure
 const submitForm = (event) => {
   event.preventDefault();
 
@@ -99,7 +103,7 @@ const submitForm = (event) => {
       // console.log(result);
       console.log("form was submitted");
       const commentBlock = createCommentBlock(result.data);
-      commentsBlock.prepend(commentBlock);
+      commentsBlock.prepend(commentBlock); // adds the latest comment before the others
     })
     .catch((error) => {
       console.log(error);

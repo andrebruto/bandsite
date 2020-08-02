@@ -1,0 +1,109 @@
+// ---------------------------------------
+// SHOWS HEADER SECTION
+// ---------------------------------------
+
+.showsPageHeader {
+  background-image: url("/assets/images/alexander-popov-3InMDrsuYrk-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 29.5rem;
+  width: 100%;
+  margin: 0;
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    @include flex-column;
+    margin-left: 1rem;
+  }
+
+  &__title {
+    font-family: "AvenirBold";
+    font-size: 2rem;
+    width: 90%;
+    color: $white;
+    margin: 1rem 0 4rem 0;
+    transition: $transition-700;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__subheader {
+    @include h4-paragraph;
+    width: 60%;
+    color: $white;
+    margin-top: 4rem;
+  }
+
+  &__music {
+    width: 90%;
+    height: 6.25rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@include tablet {
+  .showsPageHeader {
+    height: 40rem;
+
+    &__container {
+      margin-left: 1.5rem;
+    }
+
+    &__title {
+      width: 75%;
+      font-size: 3.75rem;
+    }
+
+    &__subheader {
+      @include h2-header;
+      margin-top: 6rem;
+    }
+
+    &__music {
+      align-self: flex-start;
+      margin-left: 1.5rem;
+      margin-bottom: 6rem;
+      width: 55%;
+      height: 10rem;
+    }
+  }
+}
+
+@include desktop {
+  .showsPageHeader {
+    height: 41rem;
+    width: 100vw;
+    @include flex-row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+
+    &__container {
+      width: 40%;
+      margin-left: 11.25rem;
+      @include flex-column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    &__title {
+      @include hero-header;
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    &__subheader {
+      width: 70%;
+      margin-top: 0;
+    }
+
+    &__music {
+      width: 27.25rem;
+      height: 9.125rem;
+      margin-left: 4rem;
+      margin-top: 17.5rem;
+    }
+  }
+}
